@@ -1,0 +1,30 @@
+import axios from 'axios';
+
+const serverRoot = 'http://localhost:3010';
+const tradeMarkets = ['ETH/BTC', 'ETH/BCH', 'ETH/DASH', 'ETH/XRP', 'LTC/BTC'];
+const rateLimit = 3000
+
+const printTickers = () => {
+  tradeMarkets.forEach((market, idx) => {
+    setTimeout(async() => {
+      console.log('MARKET:', market)
+      const tickers = await axios.get(`${serverRoot}/data/allTickers/${market}`);
+      console.log('TICKERS FOR MARKET', market, ':', tickers);
+    }, rateLimit * idx)
+  })
+}
+
+const printBooks = () => {
+  tradeMarkets.forEach((market, idx) => {
+    setTimeout(async() => {
+      console.log('MARKET:', market)
+      const tickers = await axios.get(`${serverRoot}/data/orderBooks/${market}`);
+      console.log('BOOKS FOR MARKET', market, ':', tickers);
+    }, rateLimit * idx)
+  })
+}
+
+export default {
+  printTickers,
+  printBooks
+}

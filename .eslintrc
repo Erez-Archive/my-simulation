@@ -1,7 +1,6 @@
 {
   "root": true,
-  "extends": [
-    "plugin:vue/essential",
-    "@vue/prettier"
-  ]
+  "rules": {
+    "quotes": ["warn", "single"]
+  }
 }

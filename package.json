@@ -11,7 +11,10 @@
     "e2e:open": "vue-cli-service e2e:open"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "ccxt": "^1.11.117",
     "register-service-worker": "^1.0.0",
+    "socket.io": "^2.1.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
